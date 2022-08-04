@@ -6,7 +6,7 @@ let vidasEnemigo = 3
 
 function seleccionarMascotaJugador() {
     let seccionAtaque = document.getElementById('seleccionar-ataque')
-    seccionAtaque.style.display = 'block'
+    seccionAtaque.style.display = 'flex'
 
     let seccionMascota = document.getElementById('seleccionar-mascota')
     seccionMascota.style.display = 'none'
@@ -124,17 +124,28 @@ function revisarVidas() {
 }
 
 function crearMensaje() {
-    let seccionMensajes = document.getElementById('mensajes')
-    let parrafo = document.createElement('p')
-    parrafo.innerHTML = 'Tu mascota atacó con ' + ataqueJugador + ', la mascota del enemigo atacó con ' + ataqueEnemigo + ' - ' + resultado
-    seccionMensajes.appendChild(parrafo)
+    let seccionMensajes = document.getElementById('resultado')
+    let ataquesDelJugador = document.getElementById('ataques-del-jugador')
+    let ataquesDelEnemigo = document.getElementById('ataques-del-enemigo')
+
+    // let notificacion = document.createElement('p')
+    let nuevoAtaqueDelJugador = document.createElement('p')
+    let nuevoAtaqueDelEnemigo = document.createElement('p')
+
+    seccionMensajes.innerHTML = resultado;
+    nuevoAtaqueDelJugador.innerHTML = ataqueJugador
+    nuevoAtaqueDelEnemigo.innerHTML = ataqueEnemigo
+
+    // let parrafo = document.createElement('p')
+    // parrafo.innerHTML = 'Tu mascota atacó con ' + ataqueJugador + ', la mascota del enemigo atacó con ' + ataqueEnemigo + ' - ' + resultado
+    // seccionMensajes.appendChild(notificacion)
+    ataquesDelJugador.appendChild(nuevoAtaqueDelJugador)
+    ataquesDelEnemigo.appendChild(nuevoAtaqueDelEnemigo)
 }
 
 function crearMensajeFinal(resultadoFinal) {
-    let seccionMensajes = document.getElementById('mensajes')
-    let parrafo = document.createElement('p')
-    parrafo.innerHTML = resultadoFinal
-    seccionMensajes.appendChild(parrafo)
+    let seccionMensajes = document.getElementById('resultado')
+    seccionMensajes.innerHTML = resultadoFinal
 
     let botonFuego = document.getElementById('boton-fuego')
     botonFuego.disabled = true
