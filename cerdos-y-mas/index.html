@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Catálogo y calculadora de precios por volumen para distribuidores de Cerdos y Más.">
+  <title>Cerdos y Más | Precios para distribuidores</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <header class="top">
+    <div class="wrap brand">
+      <img id="brandLogo" class="logo" alt="" width="64" height="64">
+      <div><h1 id="brandName">Cerdos y Más</h1><p id="brandTagline"></p></div>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section class="how" aria-label="Cómo usar la calculadora">
+      <h2>Arma tu pedido en tres pasos</h2>
+      <ol>
+        <li>Elige la cantidad de cada referencia con + y − o escribiéndola.</li>
+        <li>Entre más unidades, menor el precio por unidad: se actualiza solo.</li>
+        <li>Revisa el resumen y envíalo por WhatsApp.</li>
+      </ol>
+      <p id="demoBanner" class="demo" hidden>Los precios de esta página son ejemplos y no corresponden a tarifas reales.</p>
+    </section>
+
+    <div class="layout">
+      <div id="catalog"></div>
+
+      <aside id="resumen" class="summary" aria-label="Resumen del pedido">
+        <h2>Resumen del pedido</h2>
+        <ul id="summaryList"></ul>
+        <dl class="totals">
+          <div><dt>Total de unidades</dt><dd id="totalUnits">0</dd></div>
+          <div class="grand"><dt>Total general</dt><dd id="totalPrice">$0</dd></div>
+        </dl>
+        <div class="actions">
+          <button type="button" id="btnWhatsapp" class="btn primary">Enviar pedido por WhatsApp</button>
+          <button type="button" id="btnCopy" class="btn">Copiar pedido</button>
+          <button type="button" id="btnClear" class="btn ghost">Limpiar pedido</button>
+        </div>
+      </aside>
+    </div>
+  </main>
+
+  <footer class="foot">
+    <div class="wrap">
+      <p id="schedule"></p><p id="contact"></p><ul id="notes"></ul>
+    </div>
+  </footer>
+
+  <a href="#resumen" class="bar" aria-label="Ir al resumen del pedido">
+    <span id="barUnits">0 unidades</span><strong id="barTotal">$0</strong><span>Ver pedido</span>
+  </a>
+  <div id="toast" role="status" aria-live="polite"></div>
+
+  <script src="js/products.js"></script>
+  <script src="js/calculator.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

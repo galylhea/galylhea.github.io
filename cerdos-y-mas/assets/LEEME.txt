@@ -1,0 +1,1 @@
+Coloca aquí tus fotografías (ej. manteca-500.jpg) y reemplaza logo.svg por tu logotipo. Luego actualiza las rutas en js/products.js.
